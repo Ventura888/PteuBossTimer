@@ -1,1 +1,267 @@
-{{currentBossTime}}
+<div class="bosses-header">
+  <div class="page-title">PTEU Boss Timer</div>
+
+
+  <video autoplay muted loop class="background-video">
+    <source src="assets/video.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+</div>
+<div class="separator">
+  <div class="boss-time-scroll">
+    <span *ngIf="currentBossTime">
+          Boss Time: xx:{{currentBossTime}}
+    </span>
+    <span *ngIf="!currentBossTime">
+      Getting boss time...
+    </span>
+  </div>
+</div>
+
+<div *ngIf="!babel" class="loading-wrapper">
+  <div class="spinner-box">
+    <div class="pulse-container">
+      <div class="pulse-bubble pulse-bubble-1"></div>
+      <div class="pulse-bubble pulse-bubble-2"></div>
+      <div class="pulse-bubble pulse-bubble-3"></div>
+    </div>
+  </div>
+  <div style="margin-top: 10px; font-size: 10px; color: #e1e1e1;">Loading...</div>
+</div>
+
+<div style="display: flex; width: 100%; justify-content: center">
+  <div *ngIf="babel" class="server-time-wrapper">
+    <img class="dumbledore" src="assets/knight_stand.gif"/>
+    <div>Current server time:</div>
+    <div class="clock">{{utcTime$ | async }}</div>
+  </div>
+</div>
+
+
+<div class="bosses-this-hour-title" *ngIf="babel">
+  Bosses This Hour
+  <div class="this-hour-icon"><img class="hour-icon" src="assets/babel.png"></div>
+</div>
+
+<div class="current-bosses-list">
+  <div class="monster-container" *ngIf="babel">
+    <div *ngIf="isAlreadySpawned" class="is-already-spawned-alert">Already spawned this hour</div>
+    <img class="boss-gif" src="assets/19_babel.gif"/>
+    <div class="boss-name"><img class="type-icon" src="assets/demon.gif"/>Babel</div>
+    <div><span class="orange-subtitle">Level:</span> 100</div>
+    <div><span class="orange-subtitle">HP:</span> 30,000</div>
+  </div>
+
+  <div class="monster-container" *ngIf="chaosCaraQueen">
+    <div *ngIf="isAlreadySpawned" class="is-already-spawned-alert">Already spawned this hour</div>
+    <img class="boss-gif" src="assets/19_chaos_cara_queen.png"/>
+    <div class="boss-name"><img class="type-icon" src="assets/undead.gif"/>Chaos Cara Queen</div>
+    <div><span class="orange-subtitle">Level:</span> 100</div>
+    <div><span class="orange-subtitle">HP:</span> 30,000</div>
+  </div>
+
+  <div class="monster-container" *ngIf="darkness">
+    <div *ngIf="isAlreadySpawned" class="is-already-spawned-alert">Already spawned this hour</div>
+    <img class="boss-gif" src="assets/19_darkness.gif"/>
+    <div class="boss-name"><img class="type-icon" src="assets/undead.gif"/>Darkness</div>
+    <div><span class="orange-subtitle">Level:</span> 100</div>
+    <div><span class="orange-subtitle">HP:</span> 30,000</div>
+  </div>
+
+  <div class="monster-container" *ngIf="valento">
+    <div *ngIf="isAlreadySpawned" class="is-already-spawned-alert">Already spawned this hour</div>
+    <img class="boss-gif" src="assets/19_val.gif"/>
+    <div class="boss-name"><img class="type-icon" src="assets/undead.gif"/>Valento</div>
+    <div><span class="orange-subtitle">Level:</span> 100</div>
+    <div><span class="orange-subtitle">HP:</span> 30,000</div>
+  </div>
+
+  <div class="monster-container" *ngIf="kelvezu">
+    <div *ngIf="isAlreadySpawned" class="is-already-spawned-alert">Already spawned this hour</div>
+    <img class="boss-gif" src="assets/19_kelv.gif"/>
+    <div class="boss-name"><img class="type-icon" src="assets/demon.gif"/>Kelvezu</div>
+    <div><span class="orange-subtitle">Level:</span> 100</div>
+    <div><span class="orange-subtitle">HP:</span> 30,000</div>
+  </div>
+
+  <div class="monster-container" *ngIf="mokovian">
+    <div *ngIf="isAlreadySpawned" class="is-already-spawned-alert">Already spawned this hour</div>
+    <img class="boss-gif" src="assets/19_mokova.png"/>
+    <div class="boss-name"><img class="type-icon" src="assets/demon.gif"/>Mokovian</div>
+    <div><span class="orange-subtitle">Level:</span> 100</div>
+    <div><span class="orange-subtitle">HP:</span> 30,000</div>
+  </div>
+
+  <div class="monster-container" *ngIf="devilshy">
+    <div *ngIf="isAlreadySpawned" class="is-already-spawned-alert">Already spawned this hour</div>
+    <img class="boss-gif" src="assets/19_devilshy.png"/>
+    <div class="boss-name"><img class="type-icon" src="assets/demon.gif"/>Devil Shy</div>
+    <div><span class="orange-subtitle">Level:</span> 100</div>
+    <div><span class="orange-subtitle">HP:</span> 30,000</div>
+  </div>
+
+  <div class="monster-container" *ngIf="tulla">
+    <div *ngIf="isAlreadySpawned" class="is-already-spawned-alert">Already spawned this hour</div>
+    <img class="boss-gif" src="assets/19_tulla.gif"/>
+    <div class="boss-name"><img class="type-icon" src="assets/demon.gif"/>Tulla</div>
+    <div><span class="orange-subtitle">Level:</span> 100</div>
+    <div><span class="orange-subtitle">HP:</span> 30,000</div>
+  </div>
+
+  <div class="monster-container" *ngIf="draxos">
+    <div *ngIf="isAlreadySpawned" class="is-already-spawned-alert">Already spawned this hour</div>
+    <img class="boss-gif" src="assets/19_draxos.png"/>
+    <div class="boss-name"><img class="type-icon" src="assets/demon.gif"/>Draxos</div>
+    <div><span class="orange-subtitle">Level:</span> 100</div>
+    <div><span class="orange-subtitle">HP:</span> 30,000</div>
+  </div>
+
+  <div class="monster-container" *ngIf="greedy">
+    <div *ngIf="isAlreadySpawned" class="is-already-spawned-alert">Already spawned this hour</div>
+    <img class="boss-gif" src="assets/19_Greedy.png"/>
+    <div class="boss-name"><img class="type-icon" src="assets/demon.gif"/>Greedy</div>
+    <div><span class="orange-subtitle">Level:</span> 100</div>
+    <div><span class="orange-subtitle">HP:</span> 30,000</div>
+  </div>
+</div>
+
+
+<div class="bosses-this-hour-title" *ngIf="babel">
+  Countdown Timers
+  <div class="this-hour-icon"><img class="hour-icon" src="assets/babel.png"></div>
+</div>
+
+<div class="timers-wrapper">
+
+  <div *ngIf="soonestBabel" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Babel:</div>
+    <div class="minutes-countdown">
+      <countdown [config]="{ stopTime: soonestBabel }"></countdown>
+    </div>
+    <div class="hrs-mins">Hrs&nbsp; Mins</div>
+  </div>
+
+  <div *ngIf="!soonestBabel && utcTime$ | async" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Babel:</div>
+    <div>Tomorrow!</div>
+  </div>
+
+  <div *ngIf="soonestChaosCaraQueen" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Chaos Cara Queen:</div>
+    <div class="minutes-countdown">
+      <countdown [config]="{ stopTime: soonestChaosCaraQueen }"></countdown>
+    </div>
+    <div class="hrs-mins">Hrs&nbsp; Mins</div>
+  </div>
+
+  <div *ngIf="!soonestChaosCaraQueen && utcTime$ | async" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Chaos Cara Queen:</div>
+    <div>Tomorrow!</div>
+  </div>
+
+  <div *ngIf="soonestDarkness" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Darkness:</div>
+    <div class="minutes-countdown">
+      <countdown [config]="{ stopTime: soonestDarkness }"></countdown>
+    </div>
+    <div class="hrs-mins">Hrs&nbsp; Mins</div>
+  </div>
+
+  <div *ngIf="!soonestDarkness && utcTime$ | async" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Darkness:</div>
+    <div>Tomorrow!</div>
+  </div>
+
+  <div *ngIf="soonestValento" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Valento:</div>
+    <div class="minutes-countdown">
+      <countdown [config]="{ stopTime: soonestValento }"></countdown>
+    </div>
+    <div class="hrs-mins">Hrs&nbsp; Mins</div>
+  </div>
+
+  <div *ngIf="!soonestValento && utcTime$ | async" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Valento:</div>
+    <div>Tomorrow!</div>
+  </div>
+
+  <div *ngIf="soonestKelvezu" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Kelvezu:</div>
+    <div class="minutes-countdown">
+      <countdown [config]="{ stopTime: soonestKelvezu }"></countdown>
+    </div>
+    <div class="hrs-mins">Hrs&nbsp; Mins</div>
+  </div>
+
+  <div *ngIf="!soonestKelvezu && utcTime$ | async" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Kelvezu:</div>
+    <div>Tomorrow!</div>
+  </div>
+
+  <div *ngIf="soonestMokovian" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Mokovian:</div>
+    <div class="minutes-countdown">
+      <countdown [config]="{ stopTime: soonestMokovian }"></countdown>
+    </div>
+    <div class="hrs-mins">Hrs&nbsp; Mins</div>
+  </div>
+
+  <div *ngIf="!soonestMokovian && utcTime$ | async" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Mokovian:</div>
+    <div>Tomorrow!</div>
+  </div>
+
+  <div *ngIf="soonestDevilshy" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Devil Shy:</div>
+    <div class="minutes-countdown">
+      <countdown [config]="{ stopTime: soonestDevilshy }"></countdown>
+    </div>
+    <div class="hrs-mins">Hrs&nbsp; Mins</div>
+  </div>
+
+  <div *ngIf="!soonestDevilshy && utcTime$ | async" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Devil Shy:</div>
+    <div>Tomorrow!</div>
+  </div>
+
+  <div *ngIf="soonestTulla" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Tulla:</div>
+    <div class="minutes-countdown">
+      <countdown [config]="{ stopTime: soonestTulla }"></countdown>
+    </div>
+    <div class="hrs-mins">Hrs&nbsp; Mins</div>
+  </div>
+
+  <div *ngIf="!soonestTulla && utcTime$ | async" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Tulla:</div>
+    <div>Tomorrow!</div>
+  </div>
+
+  <div *ngIf="soonestDraxos" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Draxos:</div>
+    <div class="minutes-countdown">
+      <countdown [config]="{ stopTime: soonestDraxos }"></countdown>
+    </div>
+    <div class="hrs-mins">Hrs&nbsp; Mins</div>
+  </div>
+
+  <div *ngIf="!soonestDraxos && utcTime$ | async" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Draxos:</div>
+    <div>Tomorrow!</div>
+  </div>
+
+  <div *ngIf="soonestGreedy" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Greedy:</div>
+    <div class="minutes-countdown">
+      <countdown [config]="{ stopTime: soonestGreedy }"></countdown>
+    </div>
+    <div class="hrs-mins">Hrs&nbsp; Mins</div>
+  </div>
+
+  <div *ngIf="!soonestGreedy && utcTime$ | async" class="boss-countdown-wrapper">
+    <div class="countdown-boss-name">Greedy:</div>
+    <div>Tomorrow!</div>
+  </div>
+</div>
+
+<div *ngIf="babel" class="footer">Made for fun by Ventura</div>

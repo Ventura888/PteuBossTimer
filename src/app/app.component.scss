@@ -1,0 +1,287 @@
+.bosses-header {
+  position: relative;
+  height: 250px;
+  width: 100%;
+  overflow: hidden;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  font-family: 'MedievalSharp', cursive;
+
+  .page-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+  }
+}
+
+.background-video {
+  position: absolute;
+  min-width: 100%;
+  /* margin-top: -550px; */
+  z-index: -1;
+  left: 0;
+  top: -435px;
+}
+
+.separator {
+  background-image: url("../assets/separator2.png");
+  width: 100%;
+  height: 26px;
+  position: relative;
+  left: 0px;
+  top: -5px;
+  background-size: 512px 26px;
+  flex: 1 1 auto;
+  background-repeat: repeat-x;
+  z-index: 7;
+}
+
+.boss-time-scroll {
+  position: absolute;
+  font-weight: bold;
+  font-family: Blizz Quadrata, Georgia, Times New Roman, serif;
+  line-height: 55px;
+  width: 330px;
+  height: 45px;
+  color: black;
+  text-align: center;
+  background: url("../assets/boss_time_background.png");
+  left: 50%;
+  margin-left: -165px;
+  top: -10px;
+}
+
+.server-time-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 106px;
+  max-width: 90%;
+  background: rgba(10, 0, 0, 0.61);
+  margin-top: 70px;
+  margin-bottom: 120px;
+  border: 2px solid transparent;
+  border-image: url(../assets/login_border.png) 30 stretch;
+  position: relative;
+  color: #baa398;
+}
+
+.dumbledore {
+  position: absolute;
+  height: 250px;
+  left: -135px;
+  top: -70px;
+}
+
+.clock {
+  font-size: 25px;
+}
+
+.current-bosses-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.monster-container {
+  width: 250px;
+  height: 220px;
+  background-image: linear-gradient(to right, rgba(6, 0, 0, 0.81) 20px, rgba(0, 0, 0, 0.7));
+  border-image: linear-gradient(to right, rgba(55, 12, 8, 0) 20px, rgb(55, 12, 8) 30px, rgba(55, 12, 8, 0)) 1 / 1 / 0 stretch;
+  border-width: 2px 0px;
+  border-style: solid solid;
+  border-right: 0px;
+  border-left: 0px;
+  margin: 20px;
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.bosses-this-hour-title {
+  position: relative;
+  font-family: 'MedievalSharp', cursive;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 30px;
+  color: #e1e1e1;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 20px, black 30px, rgba(0, 0, 0, 0));
+  height: 67px;
+  line-height: 67px;
+  padding-left: 110px;
+  max-width: 100%;
+  z-index: 1;
+  text-align: left;
+  border-image: linear-gradient(to right, rgba(55, 12, 8, 0) 20px, rgb(55, 12, 8) 30px, rgba(55, 12, 8, 0)) 1 / 1 / 0 stretch;
+  border-width: 2px 0px;
+  border-style: solid solid;
+  border-right: 0px;
+  border-left: 0px;
+  margin-bottom: 20px;
+}
+
+.this-hour-icon {
+  position: absolute;
+  color: #ffa216;
+  width: 90px;
+  height: 90px;
+  left: 5px;
+  top: -15px;
+  text-align: center;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background: #060000;
+  box-shadow: 0 0 10px rgb(0 0 0 / 60%);
+  border: 0 solid #241505;
+
+  .hour-icon {
+    position: absolute;
+    width: 82px;
+    height: 80px;
+    left: -3px;
+  }
+}
+
+.boss-gif-darkness {
+  width: 320px;
+  display: flex;
+  justify-content: center;
+}
+
+.boss-name {
+  width: 320px;
+  text-align: center;
+  color: #ffa216;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.boss-gif {
+  width: 120px;
+  height: 120px;
+}
+
+.type-icon {
+  margin-right: 3px;
+}
+
+.orange-subtitle {
+  color: #ffa216;
+}
+
+.minutes-countdown {
+  display: inline-block;
+  margin-bottom: -4px;
+  width: calc(5ch - 8px);
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 25px;
+}
+
+.boss-countdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  background-image: linear-gradient(to right, rgba(6, 0, 0, 0.81) 20px, rgba(0, 0, 0, 0.7));
+  border-image: linear-gradient(to right, rgba(55, 12, 8, 0) 20px, rgb(55, 12, 8) 30px, rgba(55, 12, 8, 0)) 1 / 1 / 0 stretch;
+  border-width: 2px 0px;
+  border-style: solid solid;
+  border-right: 0px;
+  border-left: 0px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.countdown-boss-name {
+  color: #ffa216;
+}
+
+.hrs-mins {
+  font-size: 13px;
+}
+
+.is-already-spawned-alert {
+  position: absolute;
+  top: -12px;
+  color: #fff;
+  font-size: 12px;
+  background-color: rgba(202, 77, 77, 1);
+  padding: 3px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.loading-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* PULSE BUBBLES */
+
+.pulse-container {
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pulse-bubble {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ffa216;
+}
+
+.pulse-bubble-1 {
+  animation: pulse .4s ease 0s infinite alternate;
+}
+
+.pulse-bubble-2 {
+  animation: pulse .4s ease .2s infinite alternate;
+}
+
+.pulse-bubble-3 {
+  animation: pulse .4s ease .4s infinite alternate;
+}
+
+
+@keyframes pulse {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: .25;
+    transform: scale(.75);
+  }
+}
+
+.timers-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
