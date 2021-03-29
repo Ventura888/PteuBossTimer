@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://pristontale.eu/api/api.php?key=c4b90e23c554d10c3c9deadcdbfcf93b'
 };
 
 /*

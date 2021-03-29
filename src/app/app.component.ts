@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { apiUrl } from './app.module';
+import { environment } from '../environments/environment';
 import { interval, Subject, Subscription } from 'rxjs';
 
 declare global {
@@ -72,7 +73,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   getBossTime() {
-    this.http.get(apiUrl).subscribe((data: any) => {
+    this.http.get(environment.apiUrl).subscribe((data: any) => {
       this.currentBossTime = data.babel['boss.time.second'];
       this.getBossesTimesArrays();
     });
