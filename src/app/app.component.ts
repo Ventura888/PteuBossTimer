@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { apiUrl } from './app.module';
 import { environment } from '../environments/environment';
 import { interval, Subject, Subscription } from 'rxjs';
 
