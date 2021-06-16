@@ -73,7 +73,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   getBossTime() {
     this.http.get(environment.apiUrl).subscribe((data: any) => {
-      this.currentBossTime = data.babel['boss.time.second'];
+      this.currentBossTime = data.seasonal['boss.time.second'];
       this.getBossesTimesArrays();
     });
   }
